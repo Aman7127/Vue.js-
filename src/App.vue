@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <Header
       @toggle-add-task="toggleAddTask"
       title="Task Tracker"
@@ -22,6 +23,8 @@
  import Tasks from "@/components/Tasks.vue";
  import Addtask from "@/components/Addtask.vue";
 
+import gql from "graphql-tag";
+
 
   export default {
   name: 'App',
@@ -30,6 +33,9 @@
     Tasks,
     Addtask
   },
+apollo : { tasks : { query :gql` query { tasks { id text day reminder } } `, },
+},
+
   data() {
     return{
     tasks : [],
@@ -57,17 +63,22 @@
       this.tasks = [...this.tasks , task];
     },
 
-    async fetchtasks() {
+/* async fetchtasks() {
+
       const res = await fetch('http://localhost:5000/tasks');
       const data = await res.json();
       return data
-    },
+},*/
 
- },
-  async created() {
+},
+
+
+/*async created() {
+
     this.tasks = await this.fetchtasks()
 
-  }
+}*/
+
 }
 </script>
 

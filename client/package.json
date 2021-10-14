@@ -1,0 +1,8 @@
+{
+    "name": "tast-tracker",
+    "dependencies": {
+        "apollo-server": "^3.4.0",
+        "graphql": "^15.6.1",
+        "react": "^17.0.2"
+    }
+}
