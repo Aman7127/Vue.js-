@@ -1,5 +1,5 @@
 # tast-tracker
-
+Task tracker application implemented with vue.js and Apollo graphql. 
 ## Project setup
 ```
 yarn install
